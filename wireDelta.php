@@ -8,7 +8,7 @@ $aInput = array('name'=>'username', 'required'=>'true', 'id'=>'username');
 $aInputValidation = array(
 							array('required'=>'true','message'=>'Please, enter the value.'), 
 							array('minLength'=>'6','message'=>'Character should be more then 6.'),
-							array('maxLength'=>'9','message'=>'Character should be less then 6 9.')
+							array('maxLength'=>'9','message'=>'Character should be less then 9.')
 						);
 echo $oFormHandler->form_label('Username :', array('for'=>'username'));
 echo $oFormHandler->form_input($aInput, $aInputValidation,'onclick="javascript:hello();"');
