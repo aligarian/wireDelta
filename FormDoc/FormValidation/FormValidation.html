@@ -1,0 +1,598 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Docs For Class FormValidation</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="../media/layout.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../media/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../media/print.css" media="print">
+        <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+        
+                                                        
+                            	        [ <a href="../classtrees_FormValidation.html">Class Tree: FormValidation</a> ]
+            [ <a href="../elementindex_FormValidation.html">Index: FormValidation</a> ]
+        		[ <a href="../elementindex.html">All elements</a> ]		
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">FormValidation</div>
+		<div id="packageTitle">FormValidation</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="../li_Form.html">Form</a></p>
+					<p><a href="../li_FormValidation.html">FormValidation</a></p>
+			</div>
+
+				<div id="index">
+			<div id="files">
+							</div>
+			<div id="interfaces">
+							</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="../FormValidation/FormValidation.html">		FormValidation
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+	    		<h1>Class: FormValidation</h1>
+	<p style="margin: 0px;">Source Location: /Form.php</p>
+	
+
+<div class="leftcol">
+	<h3><a href="#class_details">Class Overview</a> <span class="smalllinenumber">[line 366]</span></h3>
+	<div id="classTree"><pre></pre>
+</div>
+	<div class="small">
+	<p>PHP form validation class</p>
+		<h4>Author(s):</h4>
+	<ul>
+								<li>Ammar Khan &lt;<a href="mailto:ammar.hayder@gmail.com">ammar.hayder@gmail.com</a>&gt;</li>
+											</ul>
+	<h4>Version:</h4>
+	<ul>
+													<li>1.0</li>
+						</ul>
+
+	<h4>Copyright:</h4>
+	<ul>
+													</li>
+	</div>
+</div>
+
+<div class="middlecol">
+	<h3><a href="#class_vars">Variables</a></h3>
+	<ul class="small">
+				<li><a href="../FormValidation/FormValidation.html#var$aErr">$aErr</a></li>
+				<li><a href="../FormValidation/FormValidation.html#var$aFormValidators">$aFormValidators</a></li>
+				<li><a href="../FormValidation/FormValidation.html#var$aParams">$aParams</a></li>
+			</ul>
+	<h3><a href="#class_consts">Constants</a></h3>
+	<ul class="small">
+			</ul>
+</div>
+<div class="rightcol">
+	<h3><a href="#class_methods">Methods</a></h3>
+	<ul class="small">
+				<li><a href="../FormValidation/FormValidation.html#method__construct">__construct</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodequalTo">equalTo</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodisValid">isValid</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodmaxLength">maxLength</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodmaxValue">maxValue</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodminLength">minLength</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodminValue">minValue</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodonlyNumber">onlyNumber</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodvalidEmail">validEmail</a></li>
+				<li><a href="../FormValidation/FormValidation.html#methodvalidURL">validURL</a></li>
+			</ul>
+</div>
+
+<div id="content">
+<hr>
+	<div class="contents">
+	</div>
+
+	<div class="leftCol">
+    	<h2>Inherited Variables</h2>
+		<h2>Inherited Constants</h2>
+		</div>
+
+	<div class="rightCol">
+	<h2>Inherited Methods</h2>
+		</div>
+	<br clear="all">
+	<hr>
+
+	<a name="class_details"></a>
+	<h2>Class Details</h2>
+	<p align="center"><strong>PHP form validation class
+</strong></p>
+<p>This class validate the form elements. To validate call the isValid in form action file  e.g <ol><li><div class="src-line">&nbsp;&nbsp;<a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-inc">include&nbsp;</span><span class="src-str">'inc/Form.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$formValidation&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../FormValidation/FormValidation.html">FormValidation</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$formValidation</span><span class="src-sym">-&gt;</span><a href="../FormValidation/FormValidation.html#methodisValid">isValid</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span>==&nbsp;<span class="src-id">false</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">'Location:&nbsp;wireDelta.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-key">else</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<a href="http://www.php.net/json_encode">json_encode</a><span class="src-sym">(</span><span class="src-var">$_POST</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-sym">}</span></div></li>
+</ol></p><h4>Tags:</h4>
+<ul>
+	<li><b>author</b> - Ammar Khan &lt;<a href="mailto:ammar.hayder@gmail.com">ammar.hayder@gmail.com</a>&gt;</li>
+	<li><b>version</b> - 1.0</li>
+</ul>
+	<p class="small" style="color: #334B66;">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_vars"></a>
+	<h2>Class Variables</h2>
+		<a name="var$aErr"></a>
+	<p></p>
+	<h4>$aErr</h4>
+	<div class="indent">
+		<p class="linenumber">[line 367]</p>
+		<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$aFormValidators"></a>
+	<p></p>
+	<h4>$aFormValidators</h4>
+	<div class="indent">
+		<p class="linenumber">[line 367]</p>
+		<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="var$aParams"></a>
+	<p></p>
+	<h4>$aParams</h4>
+	<div class="indent">
+		<p class="linenumber">[line 367]</p>
+		<h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		<p><b>Type:</b> mixed</p>
+		<p><b>Overrides:</b> </p>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_methods"></a>
+	<h2>Class Methods</h2>
+	
+	<a name="method__construct"></a>
+	<p></p>
+	<h3>__construct</h3>
+	<div class="indent">
+		<p>
+		<code>FormValidation __construct(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 373]</p>
+		<p align="center"><strong>A constructor function - execute after object is create  and put the object in valid state.
+</strong></p>
+<p>set @aFormValidators from session and , $aParams from $_POST</p><h4>Tags:</h4>
+<ul>
+	<li><b>access</b> - public</li>
+</ul>
+		
+	
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodequalTo"></a>
+	<p></p>
+	<h3>equalTo</h3>
+	<div class="indent">
+		<p>
+		<code>string equalTo(
+string
+$key, string
+$value, string
+$validation)</code>
+		</p>
+	
+		<p class="linenumber">[line 591]</p>
+		<p align="center"><strong>equalTo compare the element value with another one.
+</strong></p>
+<p>Here is copy paste code <ol><li><div class="src-line">&nbsp;<span class="src-var">$aInput&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'name'</span>=&gt;<span class="src-str">'password'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'id'</span>=&gt;<span class="src-str">'password'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><span class="src-var">$aInputValidation&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Please,&nbsp;enter&nbsp;the&nbsp;value.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_label</span><span class="src-sym">(</span><span class="src-str">'Password&nbsp;:'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'for'</span>=&gt;<span class="src-str">'username'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_password</span><span class="src-sym">(</span><span class="src-var">$aInput</span><span class="src-sym">,&nbsp;</span><span class="src-var">$aInputValidation</span><span class="src-sym">,</span><span class="src-str">'onclick=&quot;javascript:hello();&quot;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">echo&nbsp;<span class="src-str">'&lt;br&gt;'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><span class="src-var">$aInput&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'name'</span>=&gt;<span class="src-str">'passwordWith'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'id'</span>=&gt;<span class="src-str">'passwordWith'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><span class="src-var">$aInputValidation&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Please,&nbsp;enter&nbsp;the&nbsp;value.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'equalTo'</span>=&gt;<span class="src-str">'password'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Value&nbsp;should&nbsp;be&nbsp;equal&nbsp;to&nbsp;password.'</span><span class="src-sym">)</span>*<span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_label</span><span class="src-sym">(</span><span class="src-str">'Confirm&nbsp;Password:'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'for'</span>=&gt;<span class="src-str">'compareWith'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_password</span><span class="src-sym">(</span><span class="src-var">$aInput</span><span class="src-sym">,&nbsp;</span><span class="src-var">$aInputValidation</span><span class="src-sym">,</span><span class="src-str">'onclick=&quot;javascript:hello();&quot;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">echo&nbsp;<span class="src-str">'&lt;br&gt;'</span><span class="src-sym">;</span></div></li>
+</ol></p>		
+	
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$key</b> 
+		- 
+		name of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$value</b> 
+		- 
+		of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$validation</b> 
+		- 
+		is value of validation maxValue i.e number value</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodisValid"></a>
+	<p></p>
+	<h3>isValid</h3>
+	<div class="indent">
+		<p>
+		<code>true isValid(
+)</code>
+		</p>
+	
+		<p class="linenumber">[line 381]</p>
+		<p align="center"><strong>isValid function validate the form.
+</strong></p>
+<h4>Tags:</h4>
+<ul>
+	<li><b>return</b> - or false</li>
+	<li><b>access</b> - public</li>
+</ul>
+		
+	
+	<h4>Parameters:</h4>
+	<ul>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodmaxLength"></a>
+	<p></p>
+	<h3>maxLength</h3>
+	<div class="indent">
+		<p>
+		<code>string maxLength(
+string
+$key, string
+$value, string
+$validation)</code>
+		</p>
+	
+		<p class="linenumber">[line 469]</p>
+		<p align="center"><strong>maxLength validate the maximum character length of string.
+</strong></p>
+<p>Here is copy paste code <ol><li><div class="src-line">&nbsp;<span class="src-var">$aInput&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'name'</span>=&gt;<span class="src-str">'username'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'id'</span>=&gt;<span class="src-str">'username'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$aInputValidation&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Please,&nbsp;enter&nbsp;the&nbsp;value.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'minLength'</span>=&gt;<span class="src-str">'6'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Character&nbsp;should&nbsp;be&nbsp;more&nbsp;then&nbsp;6.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'maxLength'</span>=&gt;<span class="src-str">'9'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Character&nbsp;should&nbsp;be&nbsp;less&nbsp;then&nbsp;6&nbsp;9.'</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_label</span><span class="src-sym">(</span><span class="src-str">'Username&nbsp;:'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'for'</span>=&gt;<span class="src-str">'username'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_input</span><span class="src-sym">(</span><span class="src-var">$aInput</span><span class="src-sym">,&nbsp;</span><span class="src-var">$aInputValidation</span><span class="src-sym">,</span><span class="src-str">'onclick=&quot;javascript:hello();&quot;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></p>		
+	
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$key</b> 
+		- 
+		name of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$value</b> 
+		- 
+		of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$validation</b> 
+		- 
+		is value of validation maxLength i.e character length</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodmaxValue"></a>
+	<p></p>
+	<h3>maxValue</h3>
+	<div class="indent">
+		<p>
+		<code>string maxValue(
+string
+$key, string
+$value, string
+$validation)</code>
+		</p>
+	
+		<p class="linenumber">[line 520]</p>
+		<p align="center"><strong>maxValue validate the number value.
+</strong></p>
+<p>Here is copy paste code <ol><li><div class="src-line">&nbsp;<span class="src-var">$aInput&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'name'</span>=&gt;<span class="src-str">'age'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'id'</span>=&gt;<span class="src-str">'userAge'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$aInputValidation&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Please,&nbsp;enter&nbsp;the&nbsp;value.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'number'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'minValue'</span>=&gt;<span class="src-str">'6'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Character&nbsp;should&nbsp;be&nbsp;more&nbsp;then&nbsp;6.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'maxValue'</span>=&gt;<span class="src-str">'100'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Character&nbsp;should&nbsp;be&nbsp;less&nbsp;then&nbsp;9.'</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_label</span><span class="src-sym">(</span><span class="src-str">'Age&nbsp;:'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'for'</span>=&gt;<span class="src-str">'userAge'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_input</span><span class="src-sym">(</span><span class="src-var">$aInput</span><span class="src-sym">,&nbsp;</span><span class="src-var">$aInputValidation</span><span class="src-sym">,</span><span class="src-str">'onclick=&quot;javascript:hello();&quot;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></p>		
+	
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$key</b> 
+		- 
+		name of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$value</b> 
+		- 
+		of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$validation</b> 
+		- 
+		is value of validation maxValue i.e number value</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodminLength"></a>
+	<p></p>
+	<h3>minLength</h3>
+	<div class="indent">
+		<p>
+		<code>string minLength(
+string
+$key, string
+$value, string
+$validation)</code>
+		</p>
+	
+		<p class="linenumber">[line 447]</p>
+		<p align="center"><strong>minLength validate the minimum length of character.
+</strong></p>
+<p>Here is copy paste code <ol><li><div class="src-line">&nbsp;<span class="src-var">$aInput&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'name'</span>=&gt;<span class="src-str">'username'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'id'</span>=&gt;<span class="src-str">'username'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$aInputValidation&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Please,&nbsp;enter&nbsp;the&nbsp;value.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'minLength'</span>=&gt;<span class="src-str">'6'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Character&nbsp;should&nbsp;be&nbsp;more&nbsp;then&nbsp;6.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'maxLength'</span>=&gt;<span class="src-str">'9'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Character&nbsp;should&nbsp;be&nbsp;less&nbsp;then&nbsp;6&nbsp;9.'</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_label</span><span class="src-sym">(</span><span class="src-str">'Username&nbsp;:'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'for'</span>=&gt;<span class="src-str">'username'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_input</span><span class="src-sym">(</span><span class="src-var">$aInput</span><span class="src-sym">,&nbsp;</span><span class="src-var">$aInputValidation</span><span class="src-sym">,</span><span class="src-str">'onclick=&quot;javascript:hello();&quot;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></p>		
+	
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$key</b> 
+		- 
+		name of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$value</b> 
+		- 
+		of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$validation</b> 
+		- 
+		is value of validation minLength i.e character length</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodminValue"></a>
+	<p></p>
+	<h3>minValue</h3>
+	<div class="indent">
+		<p>
+		<code>string minValue(
+string
+$key, string
+$value, string
+$validation)</code>
+		</p>
+	
+		<p class="linenumber">[line 497]</p>
+		<p align="center"><strong>minValue validate the minimum value of number.
+</strong></p>
+<p>Here is copy paste code <ol><li><div class="src-line">&nbsp;<span class="src-var">$aInput&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'name'</span>=&gt;<span class="src-str">'age'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'id'</span>=&gt;<span class="src-str">'userAge'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$aInputValidation&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Please,&nbsp;enter&nbsp;the&nbsp;value.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'number'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'minValue'</span>=&gt;<span class="src-str">'6'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Character&nbsp;should&nbsp;be&nbsp;more&nbsp;then&nbsp;6.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'maxValue'</span>=&gt;<span class="src-str">'100'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Character&nbsp;should&nbsp;be&nbsp;less&nbsp;then&nbsp;9.'</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_label</span><span class="src-sym">(</span><span class="src-str">'Age&nbsp;:'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'for'</span>=&gt;<span class="src-str">'userAge'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_input</span><span class="src-sym">(</span><span class="src-var">$aInput</span><span class="src-sym">,&nbsp;</span><span class="src-var">$aInputValidation</span><span class="src-sym">,</span><span class="src-str">'onclick=&quot;javascript:hello();&quot;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></p>		
+	
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$key</b> 
+		- 
+		name of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$value</b> 
+		- 
+		of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$validation</b> 
+		- 
+		is value of validation minValue i.e number value</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodonlyNumber"></a>
+	<p></p>
+	<h3>onlyNumber</h3>
+	<div class="indent">
+		<p>
+		<code>void onlyNumber(
+
+$key, 
+$value, 
+$validation)</code>
+		</p>
+	
+		<p class="linenumber">[line 473]</p>
+				
+	
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type"></span>
+		<b>$key</b> 
+		- 
+		</li>
+			<li>
+		<span class="type"></span>
+		<b>$value</b> 
+		- 
+		</li>
+			<li>
+		<span class="type"></span>
+		<b>$validation</b> 
+		- 
+		</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodvalidEmail"></a>
+	<p></p>
+	<h3>validEmail</h3>
+	<div class="indent">
+		<p>
+		<code>string validEmail(
+string
+$key, string
+$value, string
+$validation)</code>
+		</p>
+	
+		<p class="linenumber">[line 541]</p>
+		<p align="center"><strong>email validate the email.
+</strong></p>
+<p>Here is copy paste code <ol><li><div class="src-line">&nbsp;<span class="src-var">$aInput&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'name'</span>=&gt;<span class="src-str">'useremail'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'id'</span>=&gt;<span class="src-str">'useremail'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$aInputValidation&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Please,&nbsp;enter&nbsp;the&nbsp;value.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'email'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_label</span><span class="src-sym">(</span><span class="src-str">'Useremail&nbsp;:'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'for'</span>=&gt;<span class="src-str">'useremail'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_input</span><span class="src-sym">(</span><span class="src-var">$aInput</span><span class="src-sym">,&nbsp;</span><span class="src-var">$aInputValidation</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></p>		
+	
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$key</b> 
+		- 
+		name of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$value</b> 
+		- 
+		of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$validation</b> 
+		- 
+		is value of validation email.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+	<a name="methodvalidURL"></a>
+	<p></p>
+	<h3>validURL</h3>
+	<div class="indent">
+		<p>
+		<code>string validURL(
+string
+$key, string
+$value, string
+$validation)</code>
+		</p>
+	
+		<p class="linenumber">[line 562]</p>
+		<p align="center"><strong>email validate the email.
+</strong></p>
+<p>Here is copy paste code <ol><li><div class="src-line">&nbsp;<span class="src-var">$aInput&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'name'</span>=&gt;<span class="src-str">'userWebsite'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'id'</span>=&gt;<span class="src-str">'userWebsite'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$aInputValidation&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'required'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">,</span><span class="src-str">'message'</span>=&gt;<span class="src-str">'Please,&nbsp;enter&nbsp;the&nbsp;value.'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'url'</span>=&gt;<span class="src-str">'true'</span><span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_label</span><span class="src-sym">(</span><span class="src-str">'User&nbsp;website&nbsp;link&nbsp;:'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'for'</span>=&gt;<span class="src-str">'userWebsite'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$oFormHandler</span><span class="src-sym">-&gt;</span><span class="src-id">form_input</span><span class="src-sym">(</span><span class="src-var">$aInput</span><span class="src-sym">,&nbsp;</span><span class="src-var">$aInputValidation</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></p>		
+	
+	<h4>Parameters:</h4>
+	<ul>
+			<li>
+		<span class="type">string</span>
+		<b>$key</b> 
+		- 
+		name of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$value</b> 
+		- 
+		of post params to be validate</li>
+			<li>
+		<span class="type">string</span>
+		<b>$validation</b> 
+		- 
+		is value of validation email.</li>
+		</ul>
+	</div>
+	<p class="top">[ <a href="#top">Top</a> ]</p>
+
+	<hr>
+	<a name="class_consts"></a>
+	<h2>Class Constants</h2>
+	</div>
+	<div id="credit">
+		<hr>
+		Documentation generated on Mon, 01 Jun 2015 00:01:02 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.3</a>
+	</div>
+</div>
+</body>
+</html>
