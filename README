@@ -1,2 +1,3 @@
-Document path = http://localhost/SampleTest/FormDoc/
-Full example  = http://localhost/SampleTest/wireDelta.php
+This is the solution of sample code problem.I have use the phpDoc for generate document.
+Document path = http://localhost/wireDelta/FormDoc/
+Full example  = http://localhost/wireDelta/wireDelta.php
